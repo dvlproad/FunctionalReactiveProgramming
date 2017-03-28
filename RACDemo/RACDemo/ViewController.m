@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PersonViewController.h"
 
 @interface ViewController ()
 
@@ -17,8 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = NSLocalizedString(@"首页", nil);
 }
 
+
+- (IBAction)goPersonViewController:(id)sender {
+    PersonViewController *viewController = [[PersonViewController alloc] initWithNibName:@"PersonViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

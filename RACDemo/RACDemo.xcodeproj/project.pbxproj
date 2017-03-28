@@ -15,6 +15,9 @@
 		78D0267A1E8A4941004B666C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D026781E8A4941004B666C /* LaunchScreen.storyboard */; };
 		78D026851E8A4941004B666C /* RACDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026841E8A4941004B666C /* RACDemoTests.m */; };
 		78D026901E8A4941004B666C /* RACDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0268F1E8A4941004B666C /* RACDemoUITests.m */; };
+		78D026A41E8A5A49004B666C /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A21E8A5A49004B666C /* PersonViewController.m */; };
+		78D026A51E8A5A49004B666C /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D026A31E8A5A49004B666C /* PersonViewController.xib */; };
+		78D026A81E8A5AB5004B666C /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A71E8A5AB5004B666C /* PersonModel.m */; };
 		7DF0C017E1969DF39672C7B2 /* Pods_RACDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4214B9182120A1CDCA9990F1 /* Pods_RACDemoTests.framework */; };
 		B375B6873C1A141B8A7F7760 /* Pods_RACDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE9AAFA94D55BA3715AB47 /* Pods_RACDemo.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,11 @@
 		78D0268B1E8A4941004B666C /* RACDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RACDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D0268F1E8A4941004B666C /* RACDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDemoUITests.m; sourceTree = "<group>"; };
 		78D026911E8A4941004B666C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D026A11E8A5A49004B666C /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
+		78D026A21E8A5A49004B666C /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
+		78D026A31E8A5A49004B666C /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
+		78D026A61E8A5AB5004B666C /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		78D026A71E8A5AB5004B666C /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		88ED44340509AFFFB22397BF /* Pods-RACDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemoTests/Pods-RACDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3EE9AAFA94D55BA3715AB47 /* Pods_RACDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EFB59EC6AE506022ADE5A0 /* Pods-RACDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemo/Pods-RACDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +134,10 @@
 				78D0266E1E8A4941004B666C /* AppDelegate.m */,
 				78D026701E8A4941004B666C /* ViewController.h */,
 				78D026711E8A4941004B666C /* ViewController.m */,
+				78D0269D1E8A5814004B666C /* Controllers */,
+				78D0269E1E8A5814004B666C /* Models */,
+				78D0269F1E8A5814004B666C /* ViewModels */,
+				78D026A01E8A5814004B666C /* Views */,
 				78D026731E8A4941004B666C /* Main.storyboard */,
 				78D026761E8A4941004B666C /* Assets.xcassets */,
 				78D026781E8A4941004B666C /* LaunchScreen.storyboard */,
@@ -159,6 +171,39 @@
 				78D026911E8A4941004B666C /* Info.plist */,
 			);
 			path = RACDemoUITests;
+			sourceTree = "<group>";
+		};
+		78D0269D1E8A5814004B666C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				78D026A11E8A5A49004B666C /* PersonViewController.h */,
+				78D026A21E8A5A49004B666C /* PersonViewController.m */,
+				78D026A31E8A5A49004B666C /* PersonViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		78D0269E1E8A5814004B666C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				78D026A61E8A5AB5004B666C /* PersonModel.h */,
+				78D026A71E8A5AB5004B666C /* PersonModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		78D0269F1E8A5814004B666C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		78D026A01E8A5814004B666C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BEB033D1D9FF25E31B5A3903 /* Pods */ = {
@@ -289,6 +334,7 @@
 				78D0267A1E8A4941004B666C /* LaunchScreen.storyboard in Resources */,
 				78D026771E8A4941004B666C /* Assets.xcassets in Resources */,
 				78D026751E8A4941004B666C /* Main.storyboard in Resources */,
+				78D026A51E8A5A49004B666C /* PersonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +452,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D026A81E8A5AB5004B666C /* PersonModel.m in Sources */,
 				78D026721E8A4941004B666C /* ViewController.m in Sources */,
 				78D0266F1E8A4941004B666C /* AppDelegate.m in Sources */,
 				78D0266C1E8A4941004B666C /* main.m in Sources */,
+				78D026A41E8A5A49004B666C /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
