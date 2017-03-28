@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'RACDemo' do
+#    pod 'CJPopupAction', '~> 1.4.2'
+#	pod 'PureLayout', '~> 3.0.2'
+    pod 'ReactiveObjC', '~> 2.1.0'
+    pod 'ReactiveCocoa', '~> 5.0.0'
+end
+
+target 'RACDemoTests' do
+    
+end
