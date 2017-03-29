@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784C14F41E8C22E30019D652 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C14F21E8C22E30019D652 /* LoginViewController.m */; };
+		784C14F51E8C22E30019D652 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784C14F31E8C22E30019D652 /* LoginViewController.xib */; };
+		784C14FB1E8C242F0019D652 /* HealthyHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */; };
+		784C14FC1E8C242F0019D652 /* HealthyNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */; };
 		78D0266C1E8A4941004B666C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0266B1E8A4941004B666C /* main.m */; };
 		78D0266F1E8A4941004B666C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0266E1E8A4941004B666C /* AppDelegate.m */; };
 		78D026721E8A4941004B666C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026711E8A4941004B666C /* ViewController.m */; };
@@ -43,6 +47,13 @@
 		002B7E6004E4D2EDDA708BDF /* Pods-RACDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemo/Pods-RACDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4214B9182120A1CDCA9990F1 /* Pods_RACDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5529E2F048016FDE0C2A2F33 /* Pods-RACDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemoTests/Pods-RACDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		784C14F11E8C22E30019D652 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		784C14F21E8C22E30019D652 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		784C14F31E8C22E30019D652 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		784C14F71E8C242F0019D652 /* HealthyHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyHTTPSessionManager.h; sourceTree = "<group>"; };
+		784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyHTTPSessionManager.m; sourceTree = "<group>"; };
+		784C14F91E8C242F0019D652 /* HealthyNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyNetworkClient.h; sourceTree = "<group>"; };
+		784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyNetworkClient.m; sourceTree = "<group>"; };
 		78D026671E8A4941004B666C /* RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D0266B1E8A4941004B666C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78D0266D1E8A4941004B666C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +116,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		784C14F61E8C242F0019D652 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				784C14F71E8C242F0019D652 /* HealthyHTTPSessionManager.h */,
+				784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */,
+				784C14F91E8C242F0019D652 /* HealthyNetworkClient.h */,
+				784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		78D0265E1E8A4941004B666C = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +156,7 @@
 				78D0266E1E8A4941004B666C /* AppDelegate.m */,
 				78D026701E8A4941004B666C /* ViewController.h */,
 				78D026711E8A4941004B666C /* ViewController.m */,
+				784C14F61E8C242F0019D652 /* Network */,
 				78D0269D1E8A5814004B666C /* Controllers */,
 				78D0269E1E8A5814004B666C /* Models */,
 				78D0269F1E8A5814004B666C /* ViewModels */,
@@ -179,6 +202,9 @@
 				78D026A11E8A5A49004B666C /* PersonViewController.h */,
 				78D026A21E8A5A49004B666C /* PersonViewController.m */,
 				78D026A31E8A5A49004B666C /* PersonViewController.xib */,
+				784C14F11E8C22E30019D652 /* LoginViewController.h */,
+				784C14F21E8C22E30019D652 /* LoginViewController.m */,
+				784C14F31E8C22E30019D652 /* LoginViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784C14F51E8C22E30019D652 /* LoginViewController.xib in Resources */,
 				78D0267A1E8A4941004B666C /* LaunchScreen.storyboard in Resources */,
 				78D026771E8A4941004B666C /* Assets.xcassets in Resources */,
 				78D026751E8A4941004B666C /* Main.storyboard in Resources */,
@@ -453,9 +480,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D026A81E8A5AB5004B666C /* PersonModel.m in Sources */,
+				784C14FC1E8C242F0019D652 /* HealthyNetworkClient.m in Sources */,
 				78D026721E8A4941004B666C /* ViewController.m in Sources */,
+				784C14F41E8C22E30019D652 /* LoginViewController.m in Sources */,
 				78D0266F1E8A4941004B666C /* AppDelegate.m in Sources */,
 				78D0266C1E8A4941004B666C /* main.m in Sources */,
+				784C14FB1E8C242F0019D652 /* HealthyHTTPSessionManager.m in Sources */,
 				78D026A41E8A5A49004B666C /* PersonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

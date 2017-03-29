@@ -42,4 +42,31 @@ end
 
 等后期ReactiveObjCBridge支持cocoapods导入后，我会第一时间更新这篇文章，感谢大家~
 
-### 
+### ReactiveCocoa常见宏
+
+8.1 RAC(TARGET, [KEYPATH, [NIL_VALUE]]):用于给某个对象的某个属性绑定。
+
+    // 只要文本框文字改变，就会修改label的文字
+    RAC(self.labelView,text) = _textField.rac_textSignal;
+8.2 RACObserve(self, name):监听某个对象的某个属性,返回的是信号。
+
+    [RACObserve(self.view, center) subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+    }];
+8.3  @weakify(Obj)和@strongify(Obj),一般两个都是配套使用,在主头文件(ReactiveCocoa.h)中并没有导入，需要自己手动导入，RACEXTScope.h才可以使用。但是每次导入都非常麻烦，只需要在主头文件自己导入就好了。
+
+8.4 RACTuplePack：把数据包装成RACTuple（元组类）
+
+    // 把参数中的数据包装成元组
+    RACTuple *tuple = RACTuplePack(@10,@20);
+8.5 RACTupleUnpack：把RACTuple（元组类）解包成对应的数据。
+
+    // 把参数中的数据包装成元组
+    RACTuple *tuple = RACTuplePack(@"xmg",@20);
+
+    // 解包元组，会把元组的值，按顺序给参数里面的变量赋值
+    // name = @"xmg" age = @20
+    RACTupleUnpack(NSString *name,NSNumber *age) = tuple;
+    
+    
+### 其他

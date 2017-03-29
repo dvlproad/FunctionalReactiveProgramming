@@ -2,12 +2,13 @@
 //  ViewController.m
 //  RACDemo
 //
-//  Created by 李超前 on 2017/3/28.
+//  Created by dvlproad on 2017/3/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import "ViewController.h"
 #import "PersonViewController.h"
+#import "LoginViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,11 @@
 
 - (IBAction)goPersonViewController:(id)sender {
     PersonViewController *viewController = [[PersonViewController alloc] initWithNibName:@"PersonViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)goLoginViewController:(id)sender {
+    LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

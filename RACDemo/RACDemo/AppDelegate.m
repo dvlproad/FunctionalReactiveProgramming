@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  RACDemo
 //
-//  Created by 李超前 on 2017/3/28.
+//  Created by dvlproad on 2017/3/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <CJNetwork/CJNetworkMonitor.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[CJNetworkMonitor sharedInstance] startNetworkMonitoring]; //开启网络监听
+    
     return YES;
 }
 

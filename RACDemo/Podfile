@@ -6,6 +6,7 @@ target 'RACDemo' do
 #	pod 'PureLayout', '~> 3.0.2'
     pod 'ReactiveObjC', '~> 2.1.0'
     pod 'ReactiveCocoa', '~> 5.0.0'
+    pod 'CJNetwork', '~> 0.0.2'
 end
 
 target 'RACDemoTests' do
