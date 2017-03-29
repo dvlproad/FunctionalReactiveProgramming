@@ -48,9 +48,17 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Pm-qRp">
                                 <rect key="frame" x="69" y="318" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LoginViewController"/>
+                                <state key="normal" title="NormalLoginViewController"/>
                                 <connections>
-                                    <action selector="goLoginViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTj-QK-cCP"/>
+                                    <action selector="goNormalLoginViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8q9-LD-xaN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-hm-4Uy">
+                                <rect key="frame" x="69" y="398" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RACLoginViewController"/>
+                                <connections>
+                                    <action selector="goRACLoginViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hl-Vr-JQy"/>
                                 </connections>
                             </button>
                         </subviews>

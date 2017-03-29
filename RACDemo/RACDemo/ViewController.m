@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "PersonViewController.h"
-#import "LoginViewController.h"
+#import "NormalLoginViewController.h"
+#import "RACLoginViewController.h"
 
 @interface ViewController ()
 
@@ -28,10 +29,16 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-- (IBAction)goLoginViewController:(id)sender {
-    LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+- (IBAction)goNormalLoginViewController:(id)sender {
+    NormalLoginViewController *viewController = [[NormalLoginViewController alloc] initWithNibName:@"NormalLoginViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+- (IBAction)goRACLoginViewController:(id)sender {
+    RACLoginViewController *viewController = [[RACLoginViewController alloc] initWithNibName:@"RACLoginViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

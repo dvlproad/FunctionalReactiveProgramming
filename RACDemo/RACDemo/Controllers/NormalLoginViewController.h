@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  NormalLoginViewController.h
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/30.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController {
+@interface NormalLoginViewController : UIViewController {
     
 }
 

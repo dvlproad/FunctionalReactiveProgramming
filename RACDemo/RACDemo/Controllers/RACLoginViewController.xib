@@ -9,9 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RACLoginViewController">
             <connections>
                 <outlet property="indicatorView" destination="JvM-8D-3n7" id="lZl-8I-A4M"/>
+                <outlet property="loginButton" destination="3Zf-n1-U4P" id="ijQ-d9-Q8F"/>
                 <outlet property="nameTextField" destination="9L5-rI-I5x" id="qgG-Q6-dwS"/>
                 <outlet property="pasdTextField" destination="Rgg-zA-ZIy" id="Ble-9e-h2u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,9 +51,6 @@
                             <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="login_health:" destination="-1" eventType="touchUpInside" id="chA-pA-AAQ"/>
-                    </connections>
                 </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-8D-3n7">
                     <rect key="frame" x="169" y="215" width="37" height="37"/>
