@@ -42,6 +42,35 @@ end
 
 等后期ReactiveObjCBridge支持cocoapods导入后，我会第一时间更新这篇文章，感谢大家~
 
+### ReactiveCocoa常见类/协议
+参考自：[最快让你上手ReactiveCocoa之基础篇](http://www.jianshu.com/p/87ef6720a096)
+###### 1、RACSiganl信号类
+RACSiganl信号类，只是表示当数据改变时，信号内部会发出数据，它本身不具备发送信号的能力，而是交给内部一个订阅者去发出。默认一个信号都是冷信号，也就是值改变了，也不会触发，只有订阅了这个信号，这个信号才会变为热信号，值改变了才会触发。
+
+如何订阅信号：调用信号RACSignal的subscribeNext就能订阅。
+
+###### 2、RACSubscriber订阅者协议
+RACSubscriber:表示订阅者的意思，用于发送信号，这是一个协议，不是一个类，只要遵守这个协议，并且实现方法才能成为订阅者。通过create创建的信号，都有一个订阅者，帮助他发送数据。
+###### 3、RACDisposable
+RACDisposable:用于取消订阅或者清理资源，当信号发送完成或者发送错误的时候，就会自动触发它。
+
+使用场景:不想监听某个信号时，可以通过它主动取消订阅信号。
+###### 4、RACSubject
+RACSubject:RACSubject:信号提供者，自己可以充当信号，又能发送信号。
+
+使用场景:通常用来代替代理，有了它，就不必要定义代理了。
+
+###### 5、RACTuple 
+RACTuple:元组类,类似NSArray,用来包装值.
+
+###### 6、RACSequence 
+RACSequence:RAC中的集合类，用于代替NSArray,NSDictionary,可以使用它来快速遍历数组和字典。
+
+###### 7、RACCommand 
+RACCommand:RAC中用于处理事件的类，可以把事件如何处理,事件中的数据如何传递，包装到这个类中，他可以很方便的监控事件的执行过程。
+
+使用场景:监听按钮点击，网络请求
+
 ### ReactiveCocoa常见宏
 
 8.1 RAC(TARGET, [KEYPATH, [NIL_VALUE]]):用于给某个对象的某个属性绑定。
@@ -70,3 +99,25 @@ end
     
     
 ### 其他
+1、创建信号(此时信号为冷信号）
+
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id subscriber) { 
+    	NSLog(@"信号被订阅");
+    }
+2、订阅信号(订阅后信后才变成热信号)
+    
+    RACDisposable *disposable = [signal subscribeNext:^(id x) {
+		NSLog(@"信号发送的内容：%@",x);
+	}]; 
+3、取消订阅 
+
+    [disposable dispose]; 
+    
+4、发送数据
+
+    [subscriber sendNext:@1];
+    
+    
+#### 参考：
+1、[使用ReactiveCocoa实现iOS平台响应式编程](http://blog.csdn.net/xdrt81y/article/details/30624469)
+2、[MVVMWithReactiveCocoa](http://www.cocoachina.com/ios/20151116/14210.html) 

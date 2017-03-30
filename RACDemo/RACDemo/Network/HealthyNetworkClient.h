@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPSessionManager+CJCategory.h"
+#import <CJNetwork/AFHTTPSessionManager+CJCategory.h>
 
 @interface HealthyNetworkClient : NSObject
 

@@ -19,9 +19,9 @@
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicatorView;
 
 @property (nonatomic, strong) LoginViewModel *viewModel;
-@property (nonatomic, strong) NSArray *dataSource;
 
 @end
+
 
 @implementation RACLoginViewController
 

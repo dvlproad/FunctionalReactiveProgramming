@@ -22,6 +22,11 @@
 @property (nonatomic, strong) PersonModel *personModel;
 @property (nonatomic) RACDelegateProxy *proxy;
 
+
+@property (nonatomic) RACDisposable *nameTextFieldDisposable;
+@property (nonatomic, weak) IBOutlet UISwitch *nameTextFieldFilterSwitch;
+@property (nonatomic, weak) IBOutlet UISwitch *nameTextFieldMapSwitch;
+
 @end
 
 
@@ -34,7 +39,7 @@
     
     [self listenPersonNameKVO];
     
-    [self listenNameTextFieldKVO];
+    [self listenNameTextFieldKVO:nil];
     [self listenTextFileCombinationKVO];
     
     [self listentEventKVO];
@@ -70,15 +75,52 @@
 
 #pragma mark - 监听文本框的内容，文本框输入事件监听（如textField的内容变化了）
 /** 2、测试rac_textSignal函数：监听到所监听的文本框的内容变化的时候，执行对应操作 */
-- (void)listenNameTextFieldKVO {
+- (IBAction)listenNameTextFieldKVO:(id)sender {
     @weakify(self);
-    [[self.nameTextField rac_textSignal]
-     subscribeNext:^(id x) {
-         @strongify(self);
-         NSLog(@"%@",x);
-         self.personModel.name = x;
-     }];
+    
+    [self.nameTextFieldDisposable dispose]; //取消订阅
+    
+    RACSignal *nameTextFieldSignal = [self.nameTextField rac_textSignal];//可以直接写成self.nameTextField.rac_textSignal
+    if (self.nameTextFieldFilterSwitch.isOn == NO && self.nameTextFieldMapSwitch.isOn == NO) {
+        self.nameTextFieldDisposable = [nameTextFieldSignal subscribeNext:^(id x) {
+            @strongify(self);
+            NSLog(@"不经任何操作的监听：%@",x);
+            self.personModel.name = x;
+        }];
+    } else if (self.nameTextFieldFilterSwitch.isOn && self.nameTextFieldMapSwitch.isOn) {
+        //映射和过滤
+        nameTextFieldSignal = [[nameTextFieldSignal map:^id(NSString *value) {
+            return @(value.length); //这里会把value的值从NSString映射成NSNumber
+        }] filter:^BOOL(id  _Nullable value) {
+            NSInteger length = [(NSNumber *)value integerValue];
+            return length > 5; //长度大于5才执行下方的打印方法
+        }];
+        
+        self.nameTextFieldDisposable = [nameTextFieldSignal subscribeNext:^(id x) {
+            NSLog(@"映射和过滤后%@", x);
+        }];
+    } else if (self.nameTextFieldFilterSwitch.isOn) {
+        //输入框过滤
+        nameTextFieldSignal = [nameTextFieldSignal filter:^BOOL(id value) {
+            NSInteger length = [(NSString *)value length];
+            return length > 5; //长度大于5才执行下方的打印方法
+        }];
+        
+        self.nameTextFieldDisposable = [nameTextFieldSignal subscribeNext:^(id x) {
+            NSLog(@"过滤后%@", x);
+        }];
+    }
 }
+
+
+//RAC的使用
+- (void)userRACSetValue {
+    //当输入长度超过5时，使用RAC()使背景颜色变化
+    RAC(self.view, backgroundColor) = [_nameTextField.rac_textSignal map:^id(NSString * value) {
+        return value.length > 5 ? [UIColor yellowColor] : [UIColor greenColor];
+    }];
+}
+
 
 #pragma mark - 监听文本信号组合
 /** 3、验证combineLatest函数：同时检测nameTextField和passwordTextField的文本内容变化，如果有一个变化，则执行对应操作 */
@@ -141,6 +183,242 @@
      }];
 }
 
+
+//uppercaseString use map
+- (void)uppercaseString {
+    
+    //    RACSequence *sequence = [@[@"you", @"are", @"beautiful"] rac_sequence];
+    //
+    //    RACSignal *signal =  sequence.signal;
+    //
+    //    RACSignal *capitalizedSignal = [signal map:^id(NSString * value) {
+    //                               return [value capitalizedString];
+    //                            }];
+    //
+    //    [signal subscribeNext:^(NSString * x) {
+    //        NSLog(@"signal --- %@", x);
+    //    }];
+    //
+    //    [NSThread sleepForTimeInterval:1.0f];
+    //
+    //    [capitalizedSignal subscribeNext:^(NSString * x) {
+    //        NSLog(@"capitalizedSignal --- %@", x);
+    //    }];
+    
+    
+    [[[@[@"you", @"are", @"beautiful"] rac_sequence].signal
+      map:^id(NSString * value) {
+          return [value capitalizedString];
+      }] subscribeNext:^(id x) {
+          NSLog(@"capitalizedSignal --- %@", x);
+      }];
+}
+
+
+
+//信号开关Switch
+- (void)signalSwitch {
+    //创建3个自定义信号
+    RACSubject *google = [RACSubject subject];
+    RACSubject *baidu = [RACSubject subject];
+    RACSubject *signalOfSignal = [RACSubject subject];
+    
+    //获取开关信号
+    RACSignal *switchSignal = [signalOfSignal switchToLatest];
+    
+    //对通过开关的信号量进行操作
+    [[switchSignal  map:^id(NSString * value) {
+        return [@"https//www." stringByAppendingFormat:@"%@", value];
+    }] subscribeNext:^(NSString * x) {
+        NSLog(@"%@", x);
+    }];
+    
+    
+    //通过开关打开baidu
+    [signalOfSignal sendNext:baidu];
+    [baidu sendNext:@"baidu.com"];
+    [google sendNext:@"google.com"];
+    
+    //通过开关打开google
+    [signalOfSignal sendNext:google];
+    [baidu sendNext:@"baidu.com/"];
+    [google sendNext:@"google.com/"];
+}
+
+
+//组合信号
+- (void)combiningLatest{
+    RACSubject *letters = [RACSubject subject];
+    RACSubject *numbers = [RACSubject subject];
+    
+    [[RACSignal
+      combineLatest:@[letters, numbers]
+      reduce:^(NSString *letter, NSString *number){
+          return [letter stringByAppendingString:number];
+      }]
+     subscribeNext:^(NSString * x) {
+         NSLog(@"%@", x);
+     }];
+    
+    //B1 C1 C2
+    [letters sendNext:@"A"];
+    [letters sendNext:@"B"];
+    [numbers sendNext:@"1"];
+    [letters sendNext:@"C"];
+    [numbers sendNext:@"2"];
+}
+
+
+//合并信号
+- (void)merge {
+    RACSubject *letters = [RACSubject subject];
+    RACSubject *numbers = [RACSubject subject];
+    RACSubject *chinese = [RACSubject subject];
+    
+    [[RACSignal
+      merge:@[letters, numbers, chinese]]
+     subscribeNext:^(id x) {
+         NSLog(@"merge:%@", x);
+     }];
+    
+    [letters sendNext:@"AAA"];
+    [numbers sendNext:@"666"];
+    [chinese sendNext:@"你好！"];
+}
+
+- (void)doNextThen{
+    //doNext, then
+    RACSignal *lettersDoNext = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
+    
+    [[[lettersDoNext
+       doNext:^(NSString *letter) {
+           NSLog(@"doNext-then:%@", letter);
+       }]
+      then:^{
+          return [@"1 2 3 4 5 6 7 8 9" componentsSeparatedByString:@" "].rac_sequence.signal;
+      }]
+     subscribeNext:^(id x) {
+         NSLog(@"doNextThenSub:%@", x);
+     }];
+    
+}
+
+- (void)flattenMap {
+    //flattenMap
+    RACSequence *numbersFlattenMap = [@"1 2 3 4 5 6 7 8 9" componentsSeparatedByString:@" "].rac_sequence;
+    /* //有误待修改
+    [[numbersFlattenMap
+      flattenMap:^RACStream *(NSString * value) {
+          if (value.intValue % 2 == 0) {
+              return [RACSequence empty];
+          } else {
+              NSString *newNum = [value stringByAppendingString:@"_"];
+              return [RACSequence return:newNum];
+          }
+      }].signal
+     subscribeNext:^(id x) {
+         NSLog(@"flattenMap:%@", x);
+     }];
+    */
+}
+
+- (void) flatten {
+    //Flattening:合并两个RACSignal, 多个Subject共同持有一个Signal
+    RACSubject *letterSubject = [RACSubject subject];
+    RACSubject *numberSubject = [RACSubject subject];
+    
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [subscriber sendNext:letterSubject];
+        [subscriber sendNext:numberSubject];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACSignal *flatternSignal = [signal flatten];
+    [flatternSignal subscribeNext:^(id x) {
+        NSLog(@"%@", x);
+    }];
+    
+    //发信号
+    [numberSubject sendNext:@(1111)];
+    [numberSubject sendNext:@(1111)];
+    [letterSubject sendNext:@"AAAA"];
+    [numberSubject sendNext:@(1111)];
+}
+
+
+- (void)subscribeNext {
+    RACSignal *letters = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence.signal;
+    // Outputs: A B C D E F G H I
+    [letters subscribeNext:^(NSString *x) {
+        NSLog(@"subscribeNext: %@", x);
+    }];
+    
+}
+
+- (void)subscribeCompleted {
+    //Subscription
+    __block unsigned subscriptions = 0;
+    
+    RACSignal *loggingSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        subscriptions ++;
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    [loggingSignal subscribeCompleted:^{
+        NSLog(@"Subscription1: %d", subscriptions);
+    }];
+    
+    [loggingSignal subscribeCompleted:^{
+        NSLog(@"Subscription2: %d", subscriptions);
+    }];
+    
+    
+}
+
+- (void)sequence {
+    //Map：映射
+    RACSequence *letter = [@"A B C D E F G H I" componentsSeparatedByString:@" "].rac_sequence;
+    
+    // Contains: AA BB CC DD EE FF GG HH II
+    RACSequence *mapped = [letter map:^(NSString *value) {
+        return [value stringByAppendingString:value];
+    }];
+    [mapped.signal subscribeNext:^(id x) {
+        //NSLog(@"Map: %@", x);
+    }];
+    
+    
+    //Filter：过滤器
+    RACSequence *numberFilter = [@"1 2 3 4 5 6 7 8" componentsSeparatedByString:@" "].rac_sequence;
+    //Filter: 2 4 6 8
+    [[numberFilter.signal
+      filter:^BOOL(NSString * value) {
+          return (value.integerValue) % 2 == 0;
+      }]
+     subscribeNext:^(NSString * x) {
+         //NSLog(@"filter: %@", x);
+     }];
+    
+    
+    
+    //Combining streams:连接两个RACSequence
+    //Combining streams: A B C D E F G H I 1 2 3 4 5 6 7 8
+    RACSequence *concat = [letter concat:numberFilter];
+    [concat.signal subscribeNext:^(NSString * x) {
+        // NSLog(@"concat: %@", x);
+    }];
+    
+    
+    //Flattening:合并两个RACSequence
+    //A B C D E F G H I 1 2 3 4 5 6 7 8
+    RACSequence * flattened = @[letter, numberFilter].rac_sequence.flatten;
+    [flattened.signal subscribeNext:^(NSString * x) {
+        NSLog(@"flattened: %@", x);
+    }];
+    
+}
 
 - (void)dealloc {
     NSLog(@"如果我出现了，说明没有循环引用，否则请检查 @weakify(self) @strongify(self) 组合 %s",__FUNCTION__);
