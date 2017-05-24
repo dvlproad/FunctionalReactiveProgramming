@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestRACViewController">
             <connections>
                 <outlet property="loginButton" destination="jUn-Ci-5dy" id="PD8-VZ-eNi"/>
                 <outlet property="nameLabel" destination="KcK-ST-V6E" id="Bi2-Fx-FJv"/>

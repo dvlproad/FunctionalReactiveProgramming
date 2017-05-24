@@ -9,14 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CJNetwork/AFHTTPSessionManager+CJCategory.h>
 
+#import "HealthyHTTPSessionManager.h"
+
 @interface HealthyNetworkClient : NSObject
 
 + (HealthyNetworkClient *)sharedInstance;
-
-//健康软件中的API
-- (void)requestLogin_name:(NSString *)name
-                     pasd:(NSString*)pasd
-                  success:(AFRequestSuccess)success
-                  failure:(AFRequestFailure)failure;
 
 @end

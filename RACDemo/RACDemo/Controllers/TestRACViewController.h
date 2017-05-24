@@ -1,13 +1,13 @@
 //
-//  PersonModel.m
+//  TestRACViewController.h
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "PersonModel.h"
+#import <UIKit/UIKit.h>
 
-@implementation PersonModel
+@interface TestRACViewController : UIViewController
 
 @end

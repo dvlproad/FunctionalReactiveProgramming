@@ -1,15 +1,15 @@
 //
-//  NormalLoginViewController.m
+//  LoginNormalViewController.m
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/30.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "NormalLoginViewController.h"
-#import "HealthyNetworkClient.h"
+#import "LoginNormalViewController.h"
+#import "LoginNormalViewController+Event.h"
 
-@interface NormalLoginViewController ()
+@interface LoginNormalViewController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *pasdTextField;
@@ -18,32 +18,28 @@
 
 @end
 
-@implementation NormalLoginViewController
+@implementation LoginNormalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = NSLocalizedString(@"NormalLoginViewController", nil);
+    self.title = NSLocalizedString(@"LoginNormalViewController", nil);
     
-    self.nameTextField.text = @"test";
-    self.pasdTextField.text = @"test";
+    self.nameTextField.text = @"ciyouzen";
+    self.pasdTextField.text = @"123456";
     [self.loginButton addTarget:self action:@selector(login_health) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self performSelector:@selector(getLastestLoginUser) withObject:nil afterDelay:1];
 }
 
-- (void)login_health {
-    [self.view endEditing:YES];
-    [SVProgressHUD showWithStatus:NSLocalizedString(@"正在登录", nil) maskType:SVProgressHUDMaskTypeBlack];
+- (void)getLastestLoginUser {
+    UserModel *lastestLoginUser = [[UserModel alloc] init];
+    lastestLoginUser.userName = @"test";
+    lastestLoginUser.password = @"test";
+    self.userModel = lastestLoginUser;
     
-    NSString *name = self.nameTextField.text;
-    NSString *pasd = self.pasdTextField.text;
-    [[HealthyNetworkClient sharedInstance] requestLogin_name:name pasd:pasd success:^(NSURLSessionDataTask *task, id responseObject) {
-        [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"登录成功", nil)];
-        
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"登录失败", nil)];
-    }];
+    self.nameTextField.text = lastestLoginUser.userName;
+    self.pasdTextField.text = lastestLoginUser.userName;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

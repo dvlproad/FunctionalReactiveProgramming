@@ -1,25 +1,25 @@
 //
-//  PersonViewController.m
+//  TestRACViewController.m
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "PersonViewController.h"
-#import "PersonModel.h"
+#import "TestRACViewController.h"
+#import "UserModel.h"
 
 //@import ReactiveCocoa;
 @import ReactiveObjC;
 
-@interface PersonViewController ()
+@interface TestRACViewController ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
-@property (nonatomic, strong) PersonModel *personModel;
+@property (nonatomic, strong) UserModel *userModel;
 @property (nonatomic) RACDelegateProxy *proxy;
 
 
@@ -30,7 +30,7 @@
 @end
 
 
-@implementation PersonViewController
+@implementation TestRACViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,24 +49,24 @@
     
 }
 
-- (PersonModel *)personModel {
-    if (!_personModel) {
-        _personModel = [[PersonModel alloc] init];
+- (UserModel *)userModel {
+    if (!_userModel) {
+        _userModel = [[UserModel alloc] init];
     }
-    return _personModel;
+    return _userModel;
 }
 
 - (IBAction)changePersonName:(id)sender {
-    self.personModel.name = [NSString stringWithFormat:@"name:%d", arc4random_uniform(100)];
+    self.userModel.userName = [NSString stringWithFormat:@"name:%d", arc4random_uniform(100)];
 }
 
 /**
- * 1、测试RACObserve函数：监听到某属性变化的时候，执行对应操作（这里为监听到personModel的name值改变时，执行改变nameLabel上的值
+ * 1、测试RACObserve函数：监听到某属性变化的时候，执行对应操作（这里为监听到userModel的name值改变时，执行改变nameLabel上的值
  */
 #pragma mark - 监听属性值的改变（如model的某个属性值改变了）
 - (void)listenPersonNameKVO {
     @weakify(self)
-    [RACObserve(self.personModel, name)
+    [RACObserve(self.userModel, userName)
      subscribeNext:^(id x) {
          @strongify(self)
          self.nameLabel.text = x;
@@ -85,7 +85,7 @@
         self.nameTextFieldDisposable = [nameTextFieldSignal subscribeNext:^(id x) {
             @strongify(self);
             NSLog(@"不经任何操作的监听：%@",x);
-            self.personModel.name = x;
+            self.userModel.userName = x;
         }];
     } else if (self.nameTextFieldFilterSwitch.isOn && self.nameTextFieldMapSwitch.isOn) {
         //映射和过滤
@@ -135,8 +135,8 @@
         
         if (name.length > 0 && password.length > 0) {
             self.loginButton.enabled = YES;
-            self.personModel.name = name;
-            self.personModel.password = password;
+            self.userModel.userName = name;
+            self.userModel.password = password;
             
         } else  {
             self.loginButton.enabled = NO;
@@ -152,7 +152,7 @@
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
          @strongify(self);
-         NSLog(@"person.name:  %@    person.password:  %@",self.personModel.name, self.personModel.password);
+         NSLog(@"person.name:  %@    person.password:  %@",self.userModel.userName, self.userModel.password);
      }];
 }
 

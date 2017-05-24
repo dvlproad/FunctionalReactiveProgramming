@@ -1,34 +1,34 @@
 //
-//  RACLoginViewController.m
+//  LoginRACMVVMViewController.m
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/30.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import "RACLoginViewController.h"
+#import "LoginRACMVVMViewController.h"
 #import "HealthyNetworkClient.h"
 
-#import "LoginViewModel.h"
+#import "LoginRACViewModel.h"
 
-@interface RACLoginViewController ()
+@interface LoginRACMVVMViewController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *pasdTextField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 @property (nonatomic, weak) IBOutlet UIActivityIndicatorView *indicatorView;
 
-@property (nonatomic, strong) LoginViewModel *viewModel;
+@property (nonatomic, strong) LoginRACViewModel *viewModel;
 
 @end
 
 
-@implementation RACLoginViewController
+@implementation LoginRACMVVMViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = NSLocalizedString(@"RACLoginViewController", nil);
+    self.title = NSLocalizedString(@"LoginRACMVVMViewController", nil);
     
     self.nameTextField.text = @"test";
     self.pasdTextField.text = @"test";
@@ -49,7 +49,7 @@
 
 //关联ViewModel
 - (void)bindViewModel {
-    _viewModel = [[LoginViewModel alloc] init];
+    _viewModel = [[LoginRACViewModel alloc] init];
     
     RAC(self.viewModel, userName) = self.nameTextField.rac_textSignal;
     RAC(self.viewModel, password) = self.pasdTextField.rac_textSignal;
@@ -73,24 +73,6 @@
         
     }];
 }
-
-/*
-- (void)login_health {
-    [self.view endEditing:YES];
-    [SVProgressHUD showWithStatus:NSLocalizedString(@"正在登录", nil) maskType:SVProgressHUDMaskTypeBlack];
-    
-    NSString *name = self.nameTextField.text;
-    NSString *pasd = self.pasdTextField.text;
-    [[HealthyNetworkClient sharedInstance] requestLogin_name:name pasd:pasd success:^(NSURLSessionDataTask *task, id responseObject) {
-        [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"登录成功", nil)];
-        
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [SVProgressHUD showErrorWithStatus:NSLocalizedString(@"登录失败", nil)];
-    }];
-}
-*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];

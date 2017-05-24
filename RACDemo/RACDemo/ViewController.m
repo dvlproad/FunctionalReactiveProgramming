@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "PersonViewController.h"
-#import "NormalLoginViewController.h"
-#import "RACLoginViewController.h"
+#import "TestRACViewController.h"
+#import "LoginNormalViewController.h"
+#import "LoginMVVMViewController.h"
+#import "LoginRACMVVMViewController.h"
 
 @interface ViewController ()
 
@@ -24,18 +25,23 @@
 }
 
 
-- (IBAction)goPersonViewController:(id)sender {
-    PersonViewController *viewController = [[PersonViewController alloc] initWithNibName:@"PersonViewController" bundle:nil];
+- (IBAction)goTestRACViewController:(id)sender {
+    TestRACViewController *viewController = [[TestRACViewController alloc] initWithNibName:@"TestRACViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-- (IBAction)goNormalLoginViewController:(id)sender {
-    NormalLoginViewController *viewController = [[NormalLoginViewController alloc] initWithNibName:@"NormalLoginViewController" bundle:nil];
+- (IBAction)goLoginNormalViewController:(id)sender {
+    LoginNormalViewController *viewController = [[LoginNormalViewController alloc] initWithNibName:@"LoginNormalViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-- (IBAction)goRACLoginViewController:(id)sender {
-    RACLoginViewController *viewController = [[RACLoginViewController alloc] initWithNibName:@"RACLoginViewController" bundle:nil];
+- (IBAction)goLoginMVVMViewController:(id)sender {
+    LoginMVVMViewController *viewController = [[LoginMVVMViewController alloc] initWithNibName:@"LoginMVVMViewController" bundle:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)goLoginRACMVVMViewController:(id)sender {
+    LoginRACMVVMViewController *viewController = [[LoginRACMVVMViewController alloc] initWithNibName:@"LoginRACMVVMViewController" bundle:nil];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

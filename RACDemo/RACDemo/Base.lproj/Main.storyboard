@@ -37,28 +37,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-3J-3AE">
-                                <rect key="frame" x="31" y="248" width="312" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PersonViewController（测试ReactiveCocoa）"/>
-                                <connections>
-                                    <action selector="goPersonViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yDi-GF-16f"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-Pm-qRp">
-                                <rect key="frame" x="69" y="318" width="202" height="30"/>
+                                <rect key="frame" x="86" y="318" width="202" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="NormalLoginViewController"/>
+                                <state key="normal" title="LoginNormalViewController"/>
                                 <connections>
-                                    <action selector="goNormalLoginViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8q9-LD-xaN"/>
+                                    <action selector="goLoginNormalViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CVC-zR-wJc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1X-hm-4Uy">
-                                <rect key="frame" x="69" y="398" width="202" height="30"/>
+                                <rect key="frame" x="58" y="398" width="259" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RACLoginViewController"/>
+                                <state key="normal" title="LoginRACMVVMViewController"/>
                                 <connections>
-                                    <action selector="goRACLoginViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hl-Vr-JQy"/>
+                                    <action selector="goLoginRACMVVMViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cdb-je-v0M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-lH-En7">
+                                <rect key="frame" x="86" y="360" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LoginMVVMViewController"/>
+                                <connections>
+                                    <action selector="goLoginMVVMViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B2A-Eg-EVG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlo-3J-3AE">
+                                <rect key="frame" x="25" y="248" width="324" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestRACViewController（测试ReactiveCocoa）"/>
+                                <connections>
+                                    <action selector="goTestRACViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V6v-3C-gLg"/>
                                 </connections>
                             </button>
                         </subviews>

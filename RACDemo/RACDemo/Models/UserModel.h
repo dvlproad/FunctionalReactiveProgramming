@@ -1,5 +1,5 @@
 //
-//  PersonModel.h
+//  UserModel.h
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/28.
@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PersonModel : NSObject
+@interface UserModel : NSObject
 
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *password;
 
 @end

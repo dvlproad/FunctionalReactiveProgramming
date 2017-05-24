@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784588AC1ED457B200ED6947 /* LoginNormalViewController+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 784588AB1ED457B200ED6947 /* LoginNormalViewController+Event.m */; };
+		784588AF1ED45A7500ED6947 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784588AE1ED45A7500ED6947 /* LoginViewModel.m */; };
+		784588B31ED45B3400ED6947 /* LoginMVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784588B11ED45B3400ED6947 /* LoginMVVMViewController.m */; };
+		784588B41ED45B3400ED6947 /* LoginMVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784588B21ED45B3400ED6947 /* LoginMVVMViewController.xib */; };
+		784588B71ED45CEF00ED6947 /* HealthyNetworkClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 784588B61ED45CEF00ED6947 /* HealthyNetworkClient+Login.m */; };
 		784C14FB1E8C242F0019D652 /* HealthyHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */; };
 		784C14FC1E8C242F0019D652 /* HealthyNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */; };
-		784C15021E8C38D00019D652 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15011E8C38D00019D652 /* LoginViewModel.m */; };
-		784C15061E8C3A740019D652 /* RACLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15041E8C3A740019D652 /* RACLoginViewController.m */; };
-		784C15071E8C3A740019D652 /* RACLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784C15051E8C3A740019D652 /* RACLoginViewController.xib */; };
-		784C150B1E8C3A970019D652 /* NormalLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15091E8C3A970019D652 /* NormalLoginViewController.m */; };
-		784C150C1E8C3A970019D652 /* NormalLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784C150A1E8C3A970019D652 /* NormalLoginViewController.xib */; };
+		784C15021E8C38D00019D652 /* LoginRACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15011E8C38D00019D652 /* LoginRACViewModel.m */; };
+		784C15061E8C3A740019D652 /* LoginRACMVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15041E8C3A740019D652 /* LoginRACMVVMViewController.m */; };
+		784C15071E8C3A740019D652 /* LoginRACMVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784C15051E8C3A740019D652 /* LoginRACMVVMViewController.xib */; };
+		784C150B1E8C3A970019D652 /* LoginNormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 784C15091E8C3A970019D652 /* LoginNormalViewController.m */; };
+		784C150C1E8C3A970019D652 /* LoginNormalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 784C150A1E8C3A970019D652 /* LoginNormalViewController.xib */; };
 		78D0266C1E8A4941004B666C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0266B1E8A4941004B666C /* main.m */; };
 		78D0266F1E8A4941004B666C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0266E1E8A4941004B666C /* AppDelegate.m */; };
 		78D026721E8A4941004B666C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026711E8A4941004B666C /* ViewController.m */; };
@@ -22,9 +27,9 @@
 		78D0267A1E8A4941004B666C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D026781E8A4941004B666C /* LaunchScreen.storyboard */; };
 		78D026851E8A4941004B666C /* RACDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026841E8A4941004B666C /* RACDemoTests.m */; };
 		78D026901E8A4941004B666C /* RACDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D0268F1E8A4941004B666C /* RACDemoUITests.m */; };
-		78D026A41E8A5A49004B666C /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A21E8A5A49004B666C /* PersonViewController.m */; };
-		78D026A51E8A5A49004B666C /* PersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D026A31E8A5A49004B666C /* PersonViewController.xib */; };
-		78D026A81E8A5AB5004B666C /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A71E8A5AB5004B666C /* PersonModel.m */; };
+		78D026A41E8A5A49004B666C /* TestRACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A21E8A5A49004B666C /* TestRACViewController.m */; };
+		78D026A51E8A5A49004B666C /* TestRACViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D026A31E8A5A49004B666C /* TestRACViewController.xib */; };
+		78D026A81E8A5AB5004B666C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D026A71E8A5AB5004B666C /* UserModel.m */; };
 		7DF0C017E1969DF39672C7B2 /* Pods_RACDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4214B9182120A1CDCA9990F1 /* Pods_RACDemoTests.framework */; };
 		B375B6873C1A141B8A7F7760 /* Pods_RACDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE9AAFA94D55BA3715AB47 /* Pods_RACDemo.framework */; };
 /* End PBXBuildFile section */
@@ -50,18 +55,27 @@
 		002B7E6004E4D2EDDA708BDF /* Pods-RACDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemo/Pods-RACDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4214B9182120A1CDCA9990F1 /* Pods_RACDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5529E2F048016FDE0C2A2F33 /* Pods-RACDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemoTests/Pods-RACDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		784588AA1ED457B200ED6947 /* LoginNormalViewController+Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoginNormalViewController+Event.h"; sourceTree = "<group>"; };
+		784588AB1ED457B200ED6947 /* LoginNormalViewController+Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoginNormalViewController+Event.m"; sourceTree = "<group>"; };
+		784588AD1ED45A7500ED6947 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
+		784588AE1ED45A7500ED6947 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		784588B01ED45B3400ED6947 /* LoginMVVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMVVMViewController.h; sourceTree = "<group>"; };
+		784588B11ED45B3400ED6947 /* LoginMVVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMVVMViewController.m; sourceTree = "<group>"; };
+		784588B21ED45B3400ED6947 /* LoginMVVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginMVVMViewController.xib; sourceTree = "<group>"; };
+		784588B51ED45CEF00ED6947 /* HealthyNetworkClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HealthyNetworkClient+Login.h"; sourceTree = "<group>"; };
+		784588B61ED45CEF00ED6947 /* HealthyNetworkClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HealthyNetworkClient+Login.m"; sourceTree = "<group>"; };
 		784C14F71E8C242F0019D652 /* HealthyHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyHTTPSessionManager.h; sourceTree = "<group>"; };
 		784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyHTTPSessionManager.m; sourceTree = "<group>"; };
 		784C14F91E8C242F0019D652 /* HealthyNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyNetworkClient.h; sourceTree = "<group>"; };
 		784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyNetworkClient.m; sourceTree = "<group>"; };
-		784C15001E8C38D00019D652 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
-		784C15011E8C38D00019D652 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
-		784C15031E8C3A740019D652 /* RACLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACLoginViewController.h; sourceTree = "<group>"; };
-		784C15041E8C3A740019D652 /* RACLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewController.m; sourceTree = "<group>"; };
-		784C15051E8C3A740019D652 /* RACLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RACLoginViewController.xib; sourceTree = "<group>"; };
-		784C15081E8C3A970019D652 /* NormalLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalLoginViewController.h; sourceTree = "<group>"; };
-		784C15091E8C3A970019D652 /* NormalLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalLoginViewController.m; sourceTree = "<group>"; };
-		784C150A1E8C3A970019D652 /* NormalLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalLoginViewController.xib; sourceTree = "<group>"; };
+		784C15001E8C38D00019D652 /* LoginRACViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRACViewModel.h; sourceTree = "<group>"; };
+		784C15011E8C38D00019D652 /* LoginRACViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRACViewModel.m; sourceTree = "<group>"; };
+		784C15031E8C3A740019D652 /* LoginRACMVVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRACMVVMViewController.h; sourceTree = "<group>"; };
+		784C15041E8C3A740019D652 /* LoginRACMVVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRACMVVMViewController.m; sourceTree = "<group>"; };
+		784C15051E8C3A740019D652 /* LoginRACMVVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginRACMVVMViewController.xib; sourceTree = "<group>"; };
+		784C15081E8C3A970019D652 /* LoginNormalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNormalViewController.h; sourceTree = "<group>"; };
+		784C15091E8C3A970019D652 /* LoginNormalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNormalViewController.m; sourceTree = "<group>"; };
+		784C150A1E8C3A970019D652 /* LoginNormalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginNormalViewController.xib; sourceTree = "<group>"; };
 		78D026671E8A4941004B666C /* RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D0266B1E8A4941004B666C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78D0266D1E8A4941004B666C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,11 +92,11 @@
 		78D0268B1E8A4941004B666C /* RACDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RACDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D0268F1E8A4941004B666C /* RACDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACDemoUITests.m; sourceTree = "<group>"; };
 		78D026911E8A4941004B666C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78D026A11E8A5A49004B666C /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
-		78D026A21E8A5A49004B666C /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
-		78D026A31E8A5A49004B666C /* PersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonViewController.xib; sourceTree = "<group>"; };
-		78D026A61E8A5AB5004B666C /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
-		78D026A71E8A5AB5004B666C /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
+		78D026A11E8A5A49004B666C /* TestRACViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestRACViewController.h; sourceTree = "<group>"; };
+		78D026A21E8A5A49004B666C /* TestRACViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestRACViewController.m; sourceTree = "<group>"; };
+		78D026A31E8A5A49004B666C /* TestRACViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestRACViewController.xib; sourceTree = "<group>"; };
+		78D026A61E8A5AB5004B666C /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		78D026A71E8A5AB5004B666C /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		88ED44340509AFFFB22397BF /* Pods-RACDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemoTests/Pods-RACDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3EE9AAFA94D55BA3715AB47 /* Pods_RACDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RACDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EFB59EC6AE506022ADE5A0 /* Pods-RACDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RACDemo/Pods-RACDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +145,8 @@
 				784C14F81E8C242F0019D652 /* HealthyHTTPSessionManager.m */,
 				784C14F91E8C242F0019D652 /* HealthyNetworkClient.h */,
 				784C14FA1E8C242F0019D652 /* HealthyNetworkClient.m */,
+				784588B51ED45CEF00ED6947 /* HealthyNetworkClient+Login.h */,
+				784588B61ED45CEF00ED6947 /* HealthyNetworkClient+Login.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -207,15 +223,20 @@
 		78D0269D1E8A5814004B666C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				78D026A11E8A5A49004B666C /* PersonViewController.h */,
-				78D026A21E8A5A49004B666C /* PersonViewController.m */,
-				78D026A31E8A5A49004B666C /* PersonViewController.xib */,
-				784C15081E8C3A970019D652 /* NormalLoginViewController.h */,
-				784C15091E8C3A970019D652 /* NormalLoginViewController.m */,
-				784C150A1E8C3A970019D652 /* NormalLoginViewController.xib */,
-				784C15031E8C3A740019D652 /* RACLoginViewController.h */,
-				784C15041E8C3A740019D652 /* RACLoginViewController.m */,
-				784C15051E8C3A740019D652 /* RACLoginViewController.xib */,
+				78D026A11E8A5A49004B666C /* TestRACViewController.h */,
+				78D026A21E8A5A49004B666C /* TestRACViewController.m */,
+				78D026A31E8A5A49004B666C /* TestRACViewController.xib */,
+				784C15081E8C3A970019D652 /* LoginNormalViewController.h */,
+				784C15091E8C3A970019D652 /* LoginNormalViewController.m */,
+				784C150A1E8C3A970019D652 /* LoginNormalViewController.xib */,
+				784588AA1ED457B200ED6947 /* LoginNormalViewController+Event.h */,
+				784588AB1ED457B200ED6947 /* LoginNormalViewController+Event.m */,
+				784588B01ED45B3400ED6947 /* LoginMVVMViewController.h */,
+				784588B11ED45B3400ED6947 /* LoginMVVMViewController.m */,
+				784588B21ED45B3400ED6947 /* LoginMVVMViewController.xib */,
+				784C15031E8C3A740019D652 /* LoginRACMVVMViewController.h */,
+				784C15041E8C3A740019D652 /* LoginRACMVVMViewController.m */,
+				784C15051E8C3A740019D652 /* LoginRACMVVMViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,8 +244,8 @@
 		78D0269E1E8A5814004B666C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				78D026A61E8A5AB5004B666C /* PersonModel.h */,
-				78D026A71E8A5AB5004B666C /* PersonModel.m */,
+				78D026A61E8A5AB5004B666C /* UserModel.h */,
+				78D026A71E8A5AB5004B666C /* UserModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,8 +253,10 @@
 		78D0269F1E8A5814004B666C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				784C15001E8C38D00019D652 /* LoginViewModel.h */,
-				784C15011E8C38D00019D652 /* LoginViewModel.m */,
+				784C15001E8C38D00019D652 /* LoginRACViewModel.h */,
+				784C15011E8C38D00019D652 /* LoginRACViewModel.m */,
+				784588AD1ED45A7500ED6947 /* LoginViewModel.h */,
+				784588AE1ED45A7500ED6947 /* LoginViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -370,12 +393,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784588B41ED45B3400ED6947 /* LoginMVVMViewController.xib in Resources */,
 				78D0267A1E8A4941004B666C /* LaunchScreen.storyboard in Resources */,
 				78D026771E8A4941004B666C /* Assets.xcassets in Resources */,
 				78D026751E8A4941004B666C /* Main.storyboard in Resources */,
-				784C150C1E8C3A970019D652 /* NormalLoginViewController.xib in Resources */,
-				78D026A51E8A5A49004B666C /* PersonViewController.xib in Resources */,
-				784C15071E8C3A740019D652 /* RACLoginViewController.xib in Resources */,
+				784C150C1E8C3A970019D652 /* LoginNormalViewController.xib in Resources */,
+				78D026A51E8A5A49004B666C /* TestRACViewController.xib in Resources */,
+				784C15071E8C3A740019D652 /* LoginRACMVVMViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,16 +517,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D026A81E8A5AB5004B666C /* PersonModel.m in Sources */,
-				784C150B1E8C3A970019D652 /* NormalLoginViewController.m in Sources */,
+				784588B31ED45B3400ED6947 /* LoginMVVMViewController.m in Sources */,
+				78D026A81E8A5AB5004B666C /* UserModel.m in Sources */,
+				784C150B1E8C3A970019D652 /* LoginNormalViewController.m in Sources */,
 				784C14FC1E8C242F0019D652 /* HealthyNetworkClient.m in Sources */,
+				784588AF1ED45A7500ED6947 /* LoginViewModel.m in Sources */,
 				78D026721E8A4941004B666C /* ViewController.m in Sources */,
 				78D0266F1E8A4941004B666C /* AppDelegate.m in Sources */,
-				784C15061E8C3A740019D652 /* RACLoginViewController.m in Sources */,
+				784588B71ED45CEF00ED6947 /* HealthyNetworkClient+Login.m in Sources */,
+				784C15061E8C3A740019D652 /* LoginRACMVVMViewController.m in Sources */,
 				78D0266C1E8A4941004B666C /* main.m in Sources */,
+				784588AC1ED457B200ED6947 /* LoginNormalViewController+Event.m in Sources */,
 				784C14FB1E8C242F0019D652 /* HealthyHTTPSessionManager.m in Sources */,
-				78D026A41E8A5A49004B666C /* PersonViewController.m in Sources */,
-				784C15021E8C38D00019D652 /* LoginViewModel.m in Sources */,
+				78D026A41E8A5A49004B666C /* TestRACViewController.m in Sources */,
+				784C15021E8C38D00019D652 /* LoginRACViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

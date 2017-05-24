@@ -1,13 +1,13 @@
 //
-//  PersonViewController.h
+//  UserModel.m
 //  RACDemo
 //
 //  Created by dvlproad on 2017/3/28.
 //  Copyright © 2017年 dvlproad. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UserModel.h"
 
-@interface PersonViewController : UIViewController
+@implementation UserModel
 
 @end

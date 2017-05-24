@@ -7,17 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveObjC/ReactiveObjC.h>
 
 @interface LoginViewModel : NSObject
 
-@property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) RACSubject *successObject;
-@property (nonatomic, strong) RACSubject *failureObject;
-@property (nonatomic, strong) RACSubject *errorObject;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *password;
 
-- (id)loginButtonIsValid;
+@property (nonatomic, copy) void (^loginButtonEnableChangeBlock)(BOOL loginButtonEnable);
+
+@property (nonatomic, copy) void (^successBlock)(id responseObject);
+@property (nonatomic, copy) void (^failureBlock)(NSError *error);
+@property (nonatomic, copy) void (^errorBlock)( NSError *error);
+
+
+- (void)userNameChangeEvent:(NSString *)userName;
+- (void)passwordChangeEvent:(NSString *)password;
+
+//- (id)loginButtonIsValid;
 - (void)login_health;
 
 @end

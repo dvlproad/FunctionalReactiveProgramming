@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NormalLoginViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginMVVMViewController">
             <connections>
                 <outlet property="indicatorView" destination="JvM-8D-3n7" id="lZl-8I-A4M"/>
-                <outlet property="loginButton" destination="3Zf-n1-U4P" id="UfM-gm-UL5"/>
+                <outlet property="loginButton" destination="3Zf-n1-U4P" id="ijQ-d9-Q8F"/>
                 <outlet property="nameTextField" destination="9L5-rI-I5x" id="qgG-Q6-dwS"/>
                 <outlet property="pasdTextField" destination="Rgg-zA-ZIy" id="Ble-9e-h2u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -45,6 +45,9 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                     <state key="normal" title="登录(健康)">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

@@ -7,8 +7,6 @@
 //
 
 #import "HealthyNetworkClient.h"
-#import "HealthyHTTPSessionManager.h"
-
 
 @implementation HealthyNetworkClient
 
@@ -19,27 +17,6 @@
         _sharedInstance = [[self alloc] init];
     });
     return _sharedInstance;
-}
-
-- (void)requestLogin_name:(NSString *)name
-                     pasd:(NSString*)pasd
-                  success:(AFRequestSuccess)success
-                  failure:(AFRequestFailure)failure
-{
-    NSString *Url = API_BASE_Url_Health(@"login");
-    NSDictionary *params = @{@"username" : name,
-                             @"password" : pasd
-                             };
-    AFHTTPSessionManager *manager = [HealthyHTTPSessionManager sharedInstance];
-    [manager cj_postRequestUrl:Url parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        if (success) {
-            success(task, responseObject);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"获取失败");
-        failure(task, error);
-    }];
-    //    [self.indicatorView setAnimatingWithStateOfOperation:operation];
 }
 
 
