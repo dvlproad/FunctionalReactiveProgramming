@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
+#import <CJBaseUIKit/UIButton+CJTouchEvent.h>
+
 @interface LoginViewModel : NSObject
 
 @property (nonatomic, copy) NSString *userName;

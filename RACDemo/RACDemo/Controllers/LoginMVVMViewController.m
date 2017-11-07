@@ -11,8 +11,6 @@
 
 #import "LoginViewModel.h"
 
-#import <CJBaseUIKit/UITextField+CJTextChangeBlock.h>
-
 @interface LoginMVVMViewController ()
 
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
@@ -35,45 +33,34 @@
     //Bind
     [self bindViewModel];
     
-    //按钮点击事件
-    [self.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
-    
     
     self.nameTextField.text = @"test";
     self.pasdTextField.text = @"test";
 }
 
-- (void)login {
-    [self.view endEditing:YES];
-    
-    [_viewModel login_health];
-}
 
-- (void)textFieldDidChange:(UITextField *)textField {
-    NSLog(@"valueChange:%@", textField.text);
-    if (textField == self.nameTextField) {
-        [self.viewModel userNameChangeEvent:textField.text];
-        
-    } else if (textField == self.pasdTextField) {
-        [self.viewModel passwordChangeEvent:textField.text];
-    }
-}
 
 //关联ViewModel
 - (void)bindViewModel {
     _viewModel = [[LoginViewModel alloc] init];
     
-    [self.nameTextField setCjTextChangeBlock:^(UITextField *textField) {
+    [self.nameTextField setCjTextDidChangeBlock:^(UITextField *textField) {
         [self.viewModel userNameChangeEvent:textField.text];
     }];
     
-    [self.pasdTextField setCjTextChangeBlock:^(UITextField *textField) {
+    [self.pasdTextField setCjTextDidChangeBlock:^(UITextField *textField) {
         [self.viewModel passwordChangeEvent:textField.text];
     }];
     
     __weak typeof(self)weakSelf = self;
     [self.viewModel setLoginButtonEnableChangeBlock:^(BOOL loginButtonEnable) {
         weakSelf.loginButton.enabled = loginButtonEnable;
+    }];
+    
+    [self.loginButton setCjTouchEventBlock:^(UIButton *button) {
+        [self.view endEditing:YES];
+        
+        [self.viewModel login_health];
     }];
     
     //登录成功要处理的方法
