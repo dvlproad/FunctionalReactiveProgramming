@@ -11,6 +11,8 @@
 
 @interface LoginViewModel ()
 
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *password;
 @property (nonatomic, strong) NSArray *requestData;
 
 @end
@@ -36,8 +38,7 @@
     self.userName = userName;
     
     if (self.loginButtonEnableChangeBlock) {
-        BOOL loginButtonEnable = self.userName.length >= 4 && self.password.length >= 4;
-        NSLog(@"%@, %@, %@", loginButtonEnable ? @"YES" : @"NO", self.userName, self.password);
+        BOOL loginButtonEnable = [self getCurrentLoginButtonState];
         self.loginButtonEnableChangeBlock(loginButtonEnable);
     }
     
@@ -48,10 +49,16 @@
     self.password = password;
     
     if (self.loginButtonEnableChangeBlock) {
-        BOOL loginButtonEnable = self.userName.length >= 4 && self.password.length >= 4;
-        NSLog(@"%@, %@, %@", loginButtonEnable ? @"YES" : @"NO", self.userName, self.password);
+        BOOL loginButtonEnable = [self getCurrentLoginButtonState];
         self.loginButtonEnableChangeBlock(loginButtonEnable);
     }
+}
+
+- (BOOL)getCurrentLoginButtonState {
+    BOOL loginButtonEnable = self.userName.length >= 4 && self.password.length >= 4;
+    NSLog(@"%@, %@, %@", loginButtonEnable ? @"YES" : @"NO", self.userName, self.password);
+    
+    return loginButtonEnable;
 }
 
 

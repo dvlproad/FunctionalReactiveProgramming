@@ -13,9 +13,6 @@
 
 @interface LoginViewModel : NSObject
 
-@property (nonatomic, copy) NSString *userName;
-@property (nonatomic, copy) NSString *password;
-
 @property (nonatomic, copy) void (^loginButtonEnableChangeBlock)(BOOL loginButtonEnable);
 
 @property (nonatomic, copy) void (^successBlock)(id responseObject);
